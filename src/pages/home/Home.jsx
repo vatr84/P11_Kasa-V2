@@ -6,12 +6,15 @@ import './Home.scss'
 import homeBanner from '../../assets/home-banner.jpg'
 import Banner from '../../components/banner/Banner'
 import Loader from '../../components/loader/Loader'
+import Header from '../../components/header/Header'
+import Footer from '../../components/footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Header />
       <Banner title="Chez vous, partout et ailleurs" image={homeBanner} />
       <div>
         <Loader />
@@ -35,6 +38,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Footer />
     </>
   )
 }
