@@ -5,6 +5,7 @@ import Logo from '../../components/Logo'
 import './Home.scss'
 import homeBanner from '../../assets/home-banner.jpg'
 import Banner from '../../components/banner/Banner'
+import Loader from '../../components/loader/Loader'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
     <>
       <Banner title="Chez vous, partout et ailleurs" image={homeBanner} />
       <div>
+        <Loader />
         <a href="https://vite.dev" target="_blank">
 
           <Logo />
