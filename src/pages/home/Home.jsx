@@ -3,15 +3,18 @@ import reactLogo from '../../assets/react.svg'
 //import viteLogo from '/logo.svg'
 import Logo from '../../components/Logo'
 import './Home.scss'
+import homeBanner from '../../assets/home-banner.jpg'
+import Banner from '../../components/banner/Banner'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+      <Banner title="Chez vous, partout et ailleurs" image={homeBanner} />
       <div>
         <a href="https://vite.dev" target="_blank">
-          
+
           <Logo />
         </a>
         <a href="https://react.dev" target="_blank">
