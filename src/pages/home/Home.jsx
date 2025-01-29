@@ -8,36 +8,28 @@ import Banner from '../../components/banner/Banner'
 import Loader from '../../components/loader/Loader'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
+import accommodationsData from '../../data/logements.json'
+import Gallery from '../../components/gallery/Gallery'
+import { useFetchData } from '../../hooks/useFetchData'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { isLoading, data } = useFetchData(accommodationsData)
 
   return (
     <>
-      <Header />
-      <Banner title="Chez vous, partout et ailleurs" image={homeBanner} />
-      <div>
-        <Loader />
-        <a href="https://vite.dev" target="_blank">
-
-          <Logo />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <main className="content container">
+        <Banner title="Chez vous, partout et ailleurs" image={homeBanner} />
+        <section className="logements">
+          <h2 className="sr-only">Liste de logements</h2>
+          {isLoading ? (
+            <Loader />
+          ) : !data ? (
+            <div>Pas de données disponibles</div>
+          ) : (
+            <Gallery accommodations={data} />
+          )}
+        </section>
+      </main>
       <Footer />
     </>
   )
