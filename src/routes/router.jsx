@@ -1,6 +1,7 @@
 import App from '../layouts/App'
 import Home from '../pages/home/Home'
-import { RouterProvider, createBrowserRouter } from 'react-router'
+import NotFound from '../pages/404/NotFound'
+import { RouterProvider, createBrowserRouter, Navigate } from 'react-router'
 
 export function Router() {
   const router = createBrowserRouter([
@@ -11,6 +12,14 @@ export function Router() {
         {
           path: '/',
           element: <Home />,
+        },
+        {
+          path: '404',
+          element: <NotFound />,
+        },
+        {
+          path: '*',
+          element: <Navigate to="/404" />,
         },
       ]
     }
