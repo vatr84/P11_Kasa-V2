@@ -17,12 +17,12 @@
 
 1. Clonez le repo
    ```sh
-   git clone https://github.com/vatr84/P11_Kasa.git
+   git clone https://github.com/vatr84/P11_Kasa-V2.git
    ```
 
 2. Changez le répertoire
    ```sh
-   cd P11_Kasa
+   cd P11_Kasa-V2
    ```
    
 3. Installez les packages
